@@ -1,0 +1,449 @@
+/* ============================================================
+   index.css  —  Portada general del proyecto de encuestas
+   Paleta corporativa · mismo sistema que encuestasSexto/Padres
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary: #2563EB;
+    --secondary: #1E40AF;
+    --celeste: #60A5FA;
+    --guinda: #9F1239;
+    --red: #DC2626;
+    --bg: #F8FAFC;
+    --card: #FFFFFF;
+    --border: #E5E7EB;
+    --txt: #111827;
+    --txt2: #374151;
+    --mute: #6B7280;
+    --radius: 14px;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, .07), 0 1px 2px rgba(0, 0, 0, .04);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, .08), 0 2px 6px rgba(0, 0, 0, .05);
+    --shadow-lg: 0 12px 36px rgba(37, 99, 235, .14), 0 4px 12px rgba(0, 0, 0, .06);
+}
+
+body {
+    background: var(--bg);
+    color: var(--txt);
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── Fondo decorativo ─────────────────────────────────── */
+.bg-decoration {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(72px);
+    opacity: .045;
+}
+
+.bg-c1 {
+    width: 600px;
+    height: 600px;
+    background: var(--primary);
+    top: -180px;
+    left: -120px;
+}
+
+.bg-c2 {
+    width: 500px;
+    height: 500px;
+    background: var(--guinda);
+    bottom: -100px;
+    right: -100px;
+}
+
+.bg-c3 {
+    width: 380px;
+    height: 380px;
+    background: var(--celeste);
+    top: 40%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+}
+
+/* ── Contenido principal ──────────────────────────────── */
+main {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px 64px;
+    text-align: center;
+}
+
+/* ── Badge institucional ──────────────────────────────── */
+.inst-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    border-radius: 100px;
+    padding: 6px 18px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 28px;
+}
+
+/* ── Encabezado ───────────────────────────────────────── */
+.hero-title {
+    font-size: clamp(28px, 5vw, 54px);
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--txt);
+    max-width: 760px;
+    margin: 0 auto 16px;
+    letter-spacing: -.02em;
+}
+
+.hero-title span {
+    color: var(--primary);
+}
+
+.hero-sub {
+    font-size: 15px;
+    color: var(--mute);
+    max-width: 520px;
+    margin: 0 auto 14px;
+    line-height: 1.65;
+}
+
+/* ── Meta info chips ──────────────────────────────────── */
+.meta-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 52px;
+}
+
+.meta-chip {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 5px 14px;
+    font-size: 12px;
+    color: var(--txt2);
+    font-weight: 500;
+    box-shadow: var(--shadow-sm);
+}
+
+.meta-chip .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary);
+    flex-shrink: 0;
+}
+
+/* ── Cards de encuesta ────────────────────────────────── */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    width: 100%;
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+.survey-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+}
+
+.survey-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.survey-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.survey-card:hover .card-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Colores de acento por tarjeta */
+.card-alumnos::before {
+    background: linear-gradient(90deg, var(--primary), var(--celeste));
+}
+
+.card-padres::before {
+    background: linear-gradient(90deg, var(--guinda), #E11D48);
+}
+
+.card-docentes::before {
+    background: linear-gradient(90deg, #059669, #34D399);
+}
+
+.card-alumnos:hover {
+    border-color: #BFDBFE;
+}
+
+.card-padres:hover {
+    border-color: #FECDD3;
+}
+
+.card-docentes:hover {
+    border-color: #A7F3D0;
+}
+
+/* Ícono grande */
+.card-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 18px;
+    flex-shrink: 0;
+}
+
+.card-alumnos .card-icon {
+    background: #EFF6FF;
+}
+
+.card-padres .card-icon {
+    background: #FFF1F2;
+}
+
+.card-docentes .card-icon {
+    background: #ECFDF5;
+}
+
+/* Etiqueta tipo */
+.card-type {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.card-alumnos .card-type {
+    color: var(--primary);
+}
+
+.card-padres .card-type {
+    color: var(--guinda);
+}
+
+.card-docentes .card-type {
+    color: #059669;
+}
+
+.card-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--txt);
+    line-height: 1.3;
+    margin-bottom: 10px;
+}
+
+.card-desc {
+    font-size: 13px;
+    color: var(--mute);
+    line-height: 1.6;
+    flex: 1;
+    margin-bottom: 22px;
+}
+
+/* Stats mini dentro de card */
+.card-stats {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 22px;
+    width: 100%;
+}
+
+.cstat {
+    flex: 1;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 9px 10px;
+    text-align: center;
+}
+
+.cstat-n {
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.cstat-l {
+    font-size: 10px;
+    color: var(--mute);
+    margin-top: 2px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.card-alumnos .cstat-n {
+    color: var(--primary);
+}
+
+.card-padres .cstat-n {
+    color: var(--guinda);
+}
+
+.card-docentes .cstat-n {
+    color: #059669;
+}
+
+/* Botón CTA dentro de card */
+.card-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 11px 16px;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    transition: opacity .18s ease, filter .18s ease;
+    color: #fff;
+}
+
+.card-btn:hover {
+    filter: brightness(1.08);
+}
+
+.card-alumnos .card-btn {
+    background: linear-gradient(90deg, var(--secondary), var(--primary));
+}
+
+.card-padres .card-btn {
+    background: linear-gradient(90deg, #881337, var(--guinda));
+}
+
+.card-docentes .card-btn {
+    background: linear-gradient(90deg, #065F46, #059669);
+}
+
+/* Card deshabilitada (docentes) */
+.card-disabled {
+    pointer-events: none;
+    opacity: .7;
+}
+
+.card-disabled .card-btn {
+    background: #D1D5DB;
+    color: #6B7280;
+    cursor: not-allowed;
+}
+
+.card-disabled::after {
+    content: 'Próximamente';
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: #FEF9C3;
+    border: 1px solid #FDE047;
+    color: #713F12;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 100px;
+}
+
+.card-arrow {
+    font-size: 14px;
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: opacity .18s ease, transform .18s ease;
+}
+
+/* ── Footer ───────────────────────────────────────────── */
+footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 22px 24px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--mute);
+    background: var(--card);
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 860px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+    }
+
+    .hero-title {
+        font-size: clamp(24px, 6vw, 36px);
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 36px 16px 48px;
+    }
+
+    .survey-card {
+        padding: 24px 20px;
+    }
+
+    .card-stats {
+        gap: 8px;
+    }
+}
