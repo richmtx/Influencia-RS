@@ -1,7 +1,3 @@
-/* ============================================================
-   index.css  —  Portada general del proyecto de encuestas
-   Paleta corporativa · mismo sistema que encuestasSexto/Padres
-   ============================================================ */
 
 *,
 *::before,
@@ -40,7 +36,7 @@ body {
     flex-direction: column;
 }
 
-/* ── Fondo decorativo ─────────────────────────────────── */
+/* Fondo decorativo */
 .bg-decoration {
     position: fixed;
     inset: 0;
@@ -81,7 +77,7 @@ body {
     transform: translate(-50%, -50%);
 }
 
-/* ── Contenido principal ──────────────────────────────── */
+/* Contenido principal */
 main {
     position: relative;
     z-index: 1;
@@ -94,11 +90,11 @@ main {
     text-align: center;
 }
 
-/* ── Badge institucional ──────────────────────────────── */
+/* Badge institucional */
 .inst-badge {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 7px;
     background: #EFF6FF;
     border: 1px solid #BFDBFE;
     border-radius: 100px;
@@ -111,7 +107,12 @@ main {
     margin-bottom: 28px;
 }
 
-/* ── Encabezado ───────────────────────────────────────── */
+.inst-badge svg {
+    stroke: var(--primary);
+    flex-shrink: 0;
+}
+
+/* Título */
 .hero-title {
     font-size: clamp(28px, 5vw, 54px);
     font-weight: 800;
@@ -134,7 +135,7 @@ main {
     line-height: 1.65;
 }
 
-/* ── Meta info chips ──────────────────────────────────── */
+/* Meta chips */
 .meta-row {
     display: flex;
     justify-content: center;
@@ -157,15 +158,12 @@ main {
     box-shadow: var(--shadow-sm);
 }
 
-.meta-chip .dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--primary);
+.meta-chip svg {
+    stroke: var(--primary);
     flex-shrink: 0;
 }
 
-/* ── Cards de encuesta ────────────────────────────────── */
+/* Grid de cards */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -173,8 +171,10 @@ main {
     width: 100%;
     max-width: 1040px;
     margin: 0 auto;
+    align-items: start;
 }
 
+/* Card base */
 .survey-card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -190,8 +190,10 @@ main {
     overflow: hidden;
     text-decoration: none;
     color: inherit;
+    cursor: pointer;
 }
 
+/* Barra de color superior */
 .survey-card::before {
     content: '';
     position: absolute;
@@ -202,17 +204,6 @@ main {
     border-radius: var(--radius) var(--radius) 0 0;
 }
 
-.survey-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-.survey-card:hover .card-arrow {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* Colores de acento por tarjeta */
 .card-alumnos::before {
     background: linear-gradient(90deg, var(--primary), var(--celeste));
 }
@@ -225,6 +216,12 @@ main {
     background: linear-gradient(90deg, #059669, #34D399);
 }
 
+/* Hover */
+.survey-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
 .card-alumnos:hover {
     border-color: #BFDBFE;
 }
@@ -233,11 +230,11 @@ main {
     border-color: #FECDD3;
 }
 
-.card-docentes:hover {
+.card-docentes:not(.card-disabled):hover {
     border-color: #A7F3D0;
 }
 
-/* Ícono grande */
+/* Ícono SVG */
 .card-icon {
     width: 52px;
     height: 52px;
@@ -245,11 +242,11 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
     margin-bottom: 18px;
     flex-shrink: 0;
 }
 
+/* Fondo del cuadrado del ícono */
 .card-alumnos .card-icon {
     background: #EFF6FF;
 }
@@ -262,7 +259,20 @@ main {
     background: #ECFDF5;
 }
 
-/* Etiqueta tipo */
+/* Color del trazo SVG según card */
+.card-alumnos .card-icon svg {
+    stroke: var(--primary);
+}
+
+.card-padres .card-icon svg {
+    stroke: var(--guinda);
+}
+
+.card-docentes .card-icon svg {
+    stroke: #059669;
+}
+
+/* Textos de card */
 .card-type {
     font-size: 10px;
     font-weight: 700;
@@ -295,15 +305,13 @@ main {
     font-size: 13px;
     color: var(--mute);
     line-height: 1.6;
-    flex: 1;
     margin-bottom: 22px;
 }
 
-/* Stats mini dentro de card */
+/* Mini stats */
 .card-stats {
     display: flex;
     gap: 14px;
-    margin-bottom: 22px;
     width: 100%;
 }
 
@@ -342,49 +350,11 @@ main {
     color: #059669;
 }
 
-/* Botón CTA dentro de card */
-.card-btn {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 11px 16px;
-    border-radius: 9px;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    border: none;
-    text-decoration: none;
-    transition: opacity .18s ease, filter .18s ease;
-    color: #fff;
-}
-
-.card-btn:hover {
-    filter: brightness(1.08);
-}
-
-.card-alumnos .card-btn {
-    background: linear-gradient(90deg, var(--secondary), var(--primary));
-}
-
-.card-padres .card-btn {
-    background: linear-gradient(90deg, #881337, var(--guinda));
-}
-
-.card-docentes .card-btn {
-    background: linear-gradient(90deg, #065F46, #059669);
-}
-
-/* Card deshabilitada (docentes) */
+/* Card deshabilitada */
 .card-disabled {
-    pointer-events: none;
-    opacity: .7;
-}
-
-.card-disabled .card-btn {
-    background: #D1D5DB;
-    color: #6B7280;
     cursor: not-allowed;
+    opacity: .72;
+    pointer-events: none;
 }
 
 .card-disabled::after {
@@ -403,14 +373,7 @@ main {
     border-radius: 100px;
 }
 
-.card-arrow {
-    font-size: 14px;
-    opacity: 0;
-    transform: translateX(-4px);
-    transition: opacity .18s ease, transform .18s ease;
-}
-
-/* ── Footer ───────────────────────────────────────────── */
+/* Footer */
 footer {
     position: relative;
     z-index: 1;
@@ -422,7 +385,7 @@ footer {
     background: var(--card);
 }
 
-/* ── Responsive ───────────────────────────────────────── */
+/* Responsive */
 @media (max-width: 860px) {
     .cards-grid {
         grid-template-columns: 1fr;

@@ -1,9 +1,4 @@
-/* ============================================================
-   encuestasSexto.css
-   Paleta corporativa — fondo blanco/gris, sin dependencias JS
-   ============================================================ */
 
-/* ── Reset & Base ─────────────────────────────────────────── */
 *,
 *::before,
 *::after {
@@ -36,7 +31,7 @@ body {
     line-height: 1.6;
 }
 
-/* ── Hero ─────────────────────────────────────────────────── */
+/* Hero */
 .hero {
     background: linear-gradient(135deg, #EFF6FF 0%, #F0F9FF 60%, #F8FAFC 100%);
     border-bottom: 1px solid var(--border);
@@ -111,7 +106,7 @@ body {
     font-weight: 500;
 }
 
-/* ── Layout ───────────────────────────────────────────────── */
+/* Layout */
 .page {
     max-width: 1180px;
     margin: 0 auto;
@@ -153,7 +148,7 @@ body {
     grid-column: 1 / -1;
 }
 
-/* ── Cards ────────────────────────────────────────────────── */
+/* Cards */
 .card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -179,7 +174,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* ── Donut SVG ────────────────────────────────────────────── */
+/* Donut SVG */
 .donut-wrap {
     display: flex;
     align-items: center;
@@ -256,7 +251,7 @@ body {
     color: var(--txt);
 }
 
-/* ── Bar horizontal ───────────────────────────────────────── */
+/* Bar horizontal */
 .hbar-list {
     display: flex;
     flex-direction: column;
@@ -296,7 +291,7 @@ body {
     border-radius: 100px;
 }
 
-/* ── Bar vertical ─────────────────────────────────────────── */
+/* Bar vertical */
 .vbar-chart {
     display: flex;
     align-items: flex-end;
@@ -377,7 +372,7 @@ body {
     padding: 0 2px;
 }
 
-/* ── Duel bar (TikTok vs YouTube) ─────────────────────────── */
+/* Duel bar (TikTok vs YouTube) */
 .duel-bar {
     display: flex;
     height: 46px;
@@ -438,7 +433,7 @@ body {
     font-weight: 500;
 }
 
-/* ── Table ────────────────────────────────────────────────── */
+/* Table */
 .tbl-wrap {
     overflow-x: auto;
 }
@@ -517,7 +512,7 @@ tbody td {
     flex-shrink: 0;
 }
 
-/* ── Bubbles ──────────────────────────────────────────────── */
+/* Bubbles */
 .bubbles {
     display: flex;
     flex-wrap: wrap;
@@ -535,7 +530,7 @@ tbody td {
     font-weight: 500;
 }
 
-/* ── Conclusions ──────────────────────────────────────────── */
+/* Conclusions */
 .conclusion {
     background: var(--card);
     border: 1px solid var(--border);
@@ -606,7 +601,7 @@ tbody td {
     color: var(--primary);
 }
 
-/* ── Footer ───────────────────────────────────────────────── */
+/* Footer */
 footer {
     text-align: center;
     padding: 28px 24px;
@@ -615,7 +610,7 @@ footer {
     color: var(--mute);
 }
 
-/* ── Responsive ───────────────────────────────────────────── */
+/* Responsive */
 @media (max-width: 640px) {
     .hero {
         padding: 44px 16px 36px;
