@@ -38,7 +38,7 @@ body {
 
 /* Hero */
 .hero {
-    background: linear-gradient(135deg, #EFF6FF 0%, #F0F9FF 60%, #F8FAFC 100%);
+    background: linear-gradient(135deg, #FEF2F2 0%, #FFF1F2 60%, #F8FAFC 100%);
     border-bottom: 1px solid var(--border);
     padding: 60px 24px 48px;
     text-align: center;
@@ -48,15 +48,15 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    background: #EFF6FF;
-    border: 1px solid #BFDBFE;
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
     border-radius: 100px;
     padding: 5px 16px;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: .1em;
     text-transform: uppercase;
-    color: var(--primary);
+    color: var(--guinda);
     margin-bottom: 20px;
 }
 
@@ -70,7 +70,7 @@ body {
 }
 
 .hero h1 span {
-    color: var(--primary);
+    color: var(--guinda);
 }
 
 .hero-sub {
@@ -101,7 +101,7 @@ body {
     font-size: 32px;
     font-weight: 800;
     line-height: 1;
-    color: var(--primary);
+    color: var(--guinda);
 }
 
 .hkpi-lbl {
@@ -126,7 +126,7 @@ body {
     font-weight: 700;
     letter-spacing: .12em;
     text-transform: uppercase;
-    color: var(--primary);
+    color: var(--guinda);
     margin: 52px 0 20px;
 }
 
@@ -297,6 +297,7 @@ tbody td {
     border: 1px solid #E5E7EB;
 }
 
+/* Distribución de opciones (en tooltip-like pill list) */
 .opts-list {
     display: flex;
     flex-direction: column;
@@ -347,7 +348,7 @@ tbody td {
 }
 
 .conclusion h2 span {
-    color: var(--primary);
+    color: var(--guinda);
 }
 
 .finding {
@@ -366,7 +367,7 @@ tbody td {
     width: 34px;
     height: 34px;
     border-radius: 8px;
-    background: #EFF6FF;
+    background: #FEF2F2;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -406,7 +407,7 @@ tbody td {
 }
 
 .rec-section h3 span {
-    color: var(--primary);
+    color: var(--guinda);
 }
 
 .rec-tags {
@@ -416,12 +417,12 @@ tbody td {
 }
 
 .rec-tag {
-    background: #EFF6FF;
-    border: 1px solid #BFDBFE;
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
     border-radius: 100px;
     padding: 5px 14px;
     font-size: 12px;
-    color: #1E40AF;
+    color: var(--guinda);
     font-weight: 500;
 }
 
@@ -435,7 +436,7 @@ tbody td {
 }
 
 .rec-box strong {
-    color: var(--primary);
+    color: var(--guinda);
 }
 
 /* Footer */
@@ -475,4 +476,13 @@ footer {
     tbody td {
         padding: 9px 10px;
     }
+}
+
+/* Iconos SVG (heredan color via currentColor) */
+.hero-badge svg {
+    color: var(--guinda);
+}
+
+.h2-icon {
+    color: var(--guinda);
 }

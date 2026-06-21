@@ -166,10 +166,10 @@ main {
 /* Grid de cards */
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 22px;
     width: 100%;
-    max-width: 1040px;
+    max-width: 760px;
     margin: 0 auto;
     align-items: start;
 }
@@ -216,6 +216,10 @@ main {
     background: linear-gradient(90deg, #059669, #34D399);
 }
 
+.card-comparativas::before {
+    background: linear-gradient(90deg, #4F46E5, #818CF8);
+}
+
 /* Hover */
 .survey-card:hover {
     transform: translateY(-5px);
@@ -232,6 +236,10 @@ main {
 
 .card-docentes:not(.card-disabled):hover {
     border-color: #A7F3D0;
+}
+
+.card-comparativas:hover {
+    border-color: #C7D2FE;
 }
 
 /* Ícono SVG */
@@ -259,6 +267,10 @@ main {
     background: #ECFDF5;
 }
 
+.card-comparativas .card-icon {
+    background: #EEF2FF;
+}
+
 /* Color del trazo SVG según card */
 .card-alumnos .card-icon svg {
     stroke: var(--primary);
@@ -270,6 +282,10 @@ main {
 
 .card-docentes .card-icon svg {
     stroke: #059669;
+}
+
+.card-comparativas .card-icon svg {
+    stroke: #4F46E5;
 }
 
 /* Textos de card */
@@ -291,6 +307,10 @@ main {
 
 .card-docentes .card-type {
     color: #059669;
+}
+
+.card-comparativas .card-type {
+    color: #4F46E5;
 }
 
 .card-title {
@@ -350,6 +370,10 @@ main {
     color: #059669;
 }
 
+.card-comparativas .cstat-n {
+    color: #4F46E5;
+}
+
 /* Card deshabilitada */
 .card-disabled {
     cursor: not-allowed;
@@ -386,7 +410,7 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 860px) {
+@media (max-width: 700px) {
     .cards-grid {
         grid-template-columns: 1fr;
         max-width: 480px;
